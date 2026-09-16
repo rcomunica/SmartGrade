@@ -1,6 +1,4 @@
-CREATE DATABASE IF NOT EXISTS proyecto_grado CHARACTER
-SET
-    utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE IF NOT EXISTS proyecto_grado CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 USE proyecto_grado;
 
@@ -27,8 +25,9 @@ VALUES (
         'De Prueba',
         'test@correo.com',
         '$2y$10$ovulUopGJq.BLDYb.u4ZE.PTQejnZRNOVncDbTaMjIKIGFrWN1FEC'
-    ) ON DUPLICATE KEY
-UPDATE email = email;
+    )
+ON DUPLICATE KEY UPDATE
+    email = email;
 
 CREATE TABLE IF NOT EXISTS subjets (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -55,6 +54,7 @@ CREATE TABLE IF NOT EXISTS terms (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     user_id INT NOT NULL,
+    is_active BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );
@@ -69,32 +69,98 @@ CREATE TABLE IF NOT EXISTS grades (
     id INT AUTO_INCREMENT PRIMARY KEY,
     subjet_id INT NOT NULL,
     term_id INT NOT NULL,
+    user_id INT NOT NULL,
     name VARCHAR(100) NOT NULL,
     value BIGINT NOT NULL,
     percentage DECIMAL(5, 2) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (subjet_id) REFERENCES subjets (id) ON DELETE CASCADE,
-    FOREIGN KEY (term_id) REFERENCES terms (id) ON DELETE CASCADE
+    FOREIGN KEY (term_id) REFERENCES terms (id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );
 
 INSERT INTO
     grades (
         subjet_id,
         term_id,
+        user_id,
         name,
         value,
         percentage
     )
-VALUES (1, 1, 'Examen 1', 85, 20.00),
-    (1, 1, 'Examen 2', 90, 30.00),
-    (1, 1, 'Proyecto', 95, 50.00),
-    (2, 1, 'Examen 1', 80, 25.00),
-    (2, 1, 'Examen 2', 85, 25.00),
-    (2, 1, 'Proyecto', 90, 50.00),
-    (3, 1, 'Examen 1', 75, 30.00),
-    (3, 1, 'Examen 2', 80, 30.00),
-    (3, 1, 'Proyecto', 85, 40.00);
+VALUES (
+        1,
+        1,
+        1,
+        'Examen 1',
+        85,
+        20.00
+    ),
+    (
+        1,
+        1,
+        1,
+        'Examen 2',
+        90,
+        30.00
+    ),
+    (
+        1,
+        1,
+        1,
+        'Proyecto',
+        95,
+        50.00
+    ),
+    (
+        1,
+        1,
+        1,
+        'Examen 1',
+        80,
+        25.00
+    ),
+    (
+        1,
+        1,
+        1,
+        'Examen 2',
+        85,
+        25.00
+    ),
+    (
+        1,
+        1,
+        1,
+        'Proyecto',
+        90,
+        50.00
+    ),
+    (
+        1,
+        1,
+        1,
+        'Examen 1',
+        75,
+        30.00
+    ),
+    (
+        1,
+        1,
+        1,
+        'Examen 2',
+        80,
+        30.00
+    ),
+    (
+        1,
+        1,
+        1,
+        'Proyecto',
+        85,
+        40.00
+    );
 
 CREATE TABLE IF NOT EXISTS goals (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -103,7 +169,7 @@ CREATE TABLE IF NOT EXISTS goals (
     name VARCHAR(100) NOT NULL,
     description TEXT,
     target_date DATE,
-    status ENUM (
+    status ENUM(
         'pending',
         'in_progress',
         'completed'

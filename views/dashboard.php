@@ -1,5 +1,7 @@
 <?php
 session_start();
+require_once __DIR__ . '/../logic/db.php';
+require_once __DIR__ . '/../logic/dashboard.php';
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
@@ -8,6 +10,12 @@ if (!isset($_SESSION['user_id'])) {
 
 $active_page = 'dashboard';
 $page_title = 'Dashboard';
+
+
+$lowest_subject = get_lowest_subject($pdo);
+$high_subject = get_high_subject($pdo);
+$actual_term = get_actual_term($pdo);
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -49,8 +57,8 @@ $page_title = 'Dashboard';
                             </svg>
                         </div>
                         <p class="widget-label">Promedio general</p>
-                        <p class="widget-value">—</p>
-                        <p class="widget-sub">Aún no hay datos registrados</p>
+                        <p class="widget-value"><?= htmlspecialchars(number_format(get_avg_grade($pdo) ?? 0, 2), ENT_QUOTES, 'UTF-8') ?></p>
+                        <p class="widget-sub">—</p>
                     </div>
 
                     <div class="widget-card">
@@ -61,9 +69,9 @@ $page_title = 'Dashboard';
                             </svg>
                         </div>
                         <p class="widget-label">Materia con bajo desempeño</p>
-                        <p class="widget-value">—</p>
+                        <p class="widget-value"><?= htmlspecialchars($lowest_subject["name"] ?? '—', ENT_QUOTES, 'UTF-8') ?></p>
                         <p class="widget-sub">
-                            <span class="badge-pill badge-pill-danger">Sin datos</span>
+                            <span class="badge-pill badge-pill-danger">El promedio es: <?= htmlspecialchars(number_format($lowest_subject["avg_grade"] ?? 0, 2), ENT_QUOTES, 'UTF-8') ?></span>
                         </p>
                     </div>
 
@@ -75,9 +83,9 @@ $page_title = 'Dashboard';
                             </svg>
                         </div>
                         <p class="widget-label">Materia con buen desempeño</p>
-                        <p class="widget-value">—</p>
+                        <p class="widget-value"><?= htmlspecialchars($high_subject["name"] ?? '—', ENT_QUOTES, 'UTF-8') ?></p>
                         <p class="widget-sub">
-                            <span class="badge-pill badge-pill-success">Sin datos</span>
+                            <span class="badge-pill badge-pill-success">El promedio es: <?= htmlspecialchars(number_format($high_subject["avg_grade"] ?? 0, 2), ENT_QUOTES, 'UTF-8') ?></span>
                         </p>
                     </div>
 
@@ -91,15 +99,29 @@ $page_title = 'Dashboard';
                             </svg>
                         </div>
                         <p class="widget-label">Periodo activo</p>
-                        <p class="widget-value">—</p>
-                        <p class="widget-sub">Ningún periodo configurado</p>
+                        <p class="widget-value"><?= htmlspecialchars($actual_term["name"] ?? '—', ENT_QUOTES, 'UTF-8') ?></p>
                     </div>
 
                 </div>
-
+                <div class="flex justify-end pt-5">
+                    <form action="../logic/connectAi.php" class="md:w-1/4" onsubmit="this.querySelector('button').disabled = true; this.querySelector('.ai-button-label').textContent = 'Generando reporte...'; this.querySelector('.ai-loading-spinner').hidden = false;">
+                        <button type="submit" class="btn btn-primary">
+                            <span class="ai-loading-spinner" aria-hidden="true" hidden></span>
+                            <span class="ai-button-label">Generar reporte con AI</span>
+                        </button>
+                    </form>
+                </div>
                 <!-- Placeholder para futura tabla de materias -->
                 <div class="card p-6 text-center">
-                    <p class="text-muted text-sm">Aquí irá el detalle por materia una vez conectemos los datos.</p>
+                    <?php if (isset($_SESSION['ai_result'])) { ?>
+                        <div class="ai-result">
+                            <h1 class="">Ey <?= htmlspecialchars($_SESSION['user_name']) ?> aca tienes tu resultado:</h1>
+                            <?= $_SESSION['ai_result'] ?>
+                        </div>
+                    <?php } else { ?>
+                        <p class="text-muted text-sm">Haz clic en el botón "Generar reporte con AI" para obtener un resumen de tu rendimiento académico.</p>
+                    <?php } ?>
+
                 </div>
 
             </main>

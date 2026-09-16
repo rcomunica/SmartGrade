@@ -74,6 +74,17 @@ $terms = getUserTerms($pdo, $user_id);
                                 class="input">
                         </div>
 
+                        <div>
+                            <label for="is_active" class="field-label">¿Periodo activo?</label>
+                            <input
+                                type="checkbox"
+                                id="is_active"
+                                name="is_active"
+                                required
+                                checked="<?= isset($old['is_active']) && $old['is_active'] ? 'checked' : '' ?>"
+                                class="input">
+                        </div>
+
                         <div class="md:col-span-2">
                             <button type="submit" class="btn btn-primary" style="width: auto;">Agregar periodo</button>
                         </div>
@@ -95,6 +106,7 @@ $terms = getUserTerms($pdo, $user_id);
                                     <tr class="text-left text-muted border-b" style="border-color: var(--color-border);">
                                         <th class="py-2 pr-4 font-medium">Periodo</th>
                                         <th class="py-2 pr-4 font-medium">Fecha de registro</th>
+                                        <th class="py-2 font-medium">Estado</th>
                                         <th class="py-2 font-medium">Acciones</th>
                                     </tr>
                                 </thead>
@@ -103,6 +115,12 @@ $terms = getUserTerms($pdo, $user_id);
                                         <tr class="border-b" style="border-color: var(--color-border);">
                                             <td class="py-3 pr-4 text-heading"><?= htmlspecialchars($term['name'], ENT_QUOTES, 'UTF-8') ?></td>
                                             <td class="py-3 pr-4 text-dim"><?= htmlspecialchars(date('d/m/Y H:i', strtotime($term['created_at'])), ENT_QUOTES, 'UTF-8') ?></td>
+                                            <td class="py-3 pr-4">
+                                                <?php if ($term['is_active']): ?>
+                                                    <span class="badge-pill badge-pill-success">Activo</span>
+                                                <?php else: ?>
+                                                    <span class="badge-pill badge-pill-muted">Inactivo</span>
+                                                <?php endif; ?>
                                             <td class="py-3">
                                                 <div class="flex items-center gap-2">
                                                     <a href="edit.php?id=<?= (int) $term['id'] ?>" class="text-sm link-accent">Editar</a>

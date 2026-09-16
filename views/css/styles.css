@@ -109,6 +109,14 @@ body {
     box-shadow var(--transition-fast);
 }
 
+.input[type="checkbox"] {
+  width: auto;
+  height: auto;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
 .input::placeholder {
   color: var(--color-text-dim);
 }
@@ -154,6 +162,28 @@ body {
 
 .btn-primary:hover {
   background-color: var(--color-primary-hover);
+}
+
+.btn:disabled {
+  cursor: wait;
+  opacity: 0.75;
+}
+
+.ai-loading-spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: var(--color-text-inverse);
+  border-radius: 50%;
+  animation: ai-spinner 0.8s linear infinite;
+}
+
+@keyframes ai-spinner {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .btn-danger-ghost {
@@ -556,4 +586,195 @@ body {
 .card,
 .widget-card {
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+/* ==========================================================================\n+   Reporte generado por IA (HTML proveniente de Markdown)\n+   ========================================================================== */
+
+.ai-result {
+  max-width: 100%;
+  color: var(--color-text);
+  padding: 1.25rem 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.ai-result > :first-child {
+  margin-top: 0;
+}
+
+.ai-result > :last-child {
+  margin-bottom: 0;
+}
+
+.ai-result h1,
+.ai-result h2,
+.ai-result h3,
+.ai-result h4,
+.ai-result h5,
+.ai-result h6 {
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 1.75rem 0 0.65rem;
+}
+
+.ai-result h1 {
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--color-border);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.ai-result h2 {
+  padding-left: 0.85rem;
+  border-left: 4px solid var(--color-primary);
+  font-size: 1.35rem;
+}
+
+.ai-result h3 {
+  color: var(--color-primary-hover);
+  font-size: 1.1rem;
+}
+
+.ai-result h4,
+.ai-result h5,
+.ai-result h6 {
+  font-size: 1rem;
+}
+
+.ai-result p {
+  margin: 0.85rem 0;
+}
+
+.ai-result strong {
+  color: var(--color-primary-hover);
+  font-weight: 700;
+}
+
+.ai-result em {
+  color: var(--color-text-muted);
+}
+
+.ai-result ul,
+.ai-result ol {
+  margin: 0.9rem 0;
+  padding-left: 1.5rem;
+}
+
+.ai-result ul {
+  list-style-type: disc;
+}
+
+.ai-result ol {
+  list-style-type: decimal;
+}
+
+.ai-result li {
+  margin: 0.35rem 0;
+  padding-left: 0.25rem;
+}
+
+.ai-result li::marker {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.ai-result a {
+  color: var(--color-primary-hover);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary-soft);
+  text-underline-offset: 0.2rem;
+}
+
+.ai-result a:hover {
+  color: var(--color-primary);
+}
+
+.ai-result blockquote {
+  margin: 1.25rem 0;
+  padding: 0.9rem 1.1rem;
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background-color: var(--color-primary-soft);
+  color: var(--color-text-muted);
+}
+
+.ai-result blockquote p {
+  margin: 0;
+}
+
+.ai-result hr {
+  margin: 1.75rem 0;
+  border: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.ai-result code {
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-overlay-soft);
+  color: var(--color-primary-hover);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.86em;
+}
+
+.ai-result pre {
+  margin: 1.25rem 0;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-text);
+  color: var(--color-text-inverse);
+  text-align: left;
+}
+
+.ai-result pre code {
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 0.85rem;
+}
+
+.ai-result table {
+  display: block;
+  width: 100%;
+  margin: 1.25rem 0;
+  overflow-x: auto;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+
+.ai-result th,
+.ai-result td {
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.ai-result th {
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary-hover);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.ai-result tr:last-child td {
+  border-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .ai-result {
+    font-size: 0.9rem;
+  }
+
+  .ai-result h1 {
+    font-size: 1.45rem;
+  }
+
+  .ai-result h2 {
+    font-size: 1.2rem;
+  }
 }

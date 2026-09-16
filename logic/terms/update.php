@@ -23,6 +23,7 @@ if ($id === false) {
 }
 
 $name = trim($_POST['name'] ?? '');
+$is_active = trim($_POST['is_active']) ? 1 : 0;
 $errors = [];
 
 if ($name === '') {
@@ -31,8 +32,14 @@ if ($name === '') {
     $errors[] = 'El nombre del periodo no puede superar 100 caracteres.';
 }
 
+if ($is_active) {
+    $stmt = $pdo->prepare('UPDATE terms SET is_active = 0 WHERE user_id = :user_id');
+    $stmt->execute(['user_id' => $user_id]);
+}
+
 $_SESSION['terms_old'] = [
     'name' => $name,
+    'is_active' => $is_active,
 ];
 
 if (!empty($errors)) {
@@ -48,10 +55,11 @@ if (!$current) {
     exit;
 }
 
-$stmt = $pdo->prepare('UPDATE terms SET name = :name WHERE id = :id AND user_id = :user_id');
+$stmt = $pdo->prepare('UPDATE terms SET name = :name, is_active = :is_active WHERE id = :id AND user_id = :user_id');
 $stmt->execute([
     'name' => $name,
     'id' => (int) $id,
+    'is_active' => $is_active,
     'user_id' => $user_id,
 ]);
 

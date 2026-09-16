@@ -14,12 +14,18 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $user_id = (int) $_SESSION['user_id'];
 $name = trim($_POST['name'] ?? '');
+$is_active = isset($_POST['is_active']) ? 1 : 0;
 $errors = [];
 
 if ($name === '') {
     $errors[] = 'El nombre del periodo es obligatorio.';
 } elseif (strlen($name) > 100) {
     $errors[] = 'El nombre del periodo no puede superar 100 caracteres.';
+}
+
+if ($is_active) {
+    $stmt = $pdo->prepare('UPDATE terms SET is_active = 0 WHERE user_id = :user_id');
+    $stmt->execute(['user_id' => $user_id]);
 }
 
 $_SESSION['terms_old'] = [
@@ -32,10 +38,11 @@ if (!empty($errors)) {
     exit;
 }
 
-$stmt = $pdo->prepare('INSERT INTO terms (name, user_id) VALUES (:name, :user_id)');
+$stmt = $pdo->prepare('INSERT INTO terms (name, user_id, is_active) VALUES (:name, :user_id, :is_active)');
 $stmt->execute([
     'name' => $name,
     'user_id' => $user_id,
+    'is_active' => $is_active,
 ]);
 
 unset($_SESSION['terms_old']);

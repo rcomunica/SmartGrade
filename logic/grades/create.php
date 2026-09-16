@@ -84,11 +84,12 @@ if (!empty($errors)) {
     exit;
 }
 
-$stmt = $pdo->prepare('INSERT INTO grades (subjet_id, term_id, name, value, percentage) VALUES (:subjet_id, :term_id, :name, :value, :percentage)');
+$stmt = $pdo->prepare('INSERT INTO grades (subjet_id, term_id, name, user_id, value, percentage) VALUES (:subjet_id, :term_id, :name, :user_id, :value, :percentage)');
 $stmt->execute([
     'subjet_id' => (int) $subjet_id,
     'term_id' => (int) $term_id,
     'name' => $name,
+    'user_id' => $user_id,
     'value' => (float) $value,
     'percentage' => (float) $percentage,
 ]);

@@ -1,0 +1,77 @@
+{
+  "estudiante": {
+    "nombre": "Julian",
+    "periodo": "2026-2",
+    "promedio_general_actual": 3.52,
+    "promedio_objetivo": 3.8
+  },
+  "materias": [
+    {
+      "nombre": "Matemáticas",
+      "promedio_actual": 3.0,
+      "objetivo": 3.5,
+      "evaluaciones": [
+        {
+          "nombre": "Parcial 1",
+          "nota": 3.2,
+          "peso": 0.3
+        },
+        {
+          "nombre": "Parcial 2",
+          "nota": 2.8,
+          "peso": 0.3
+        }
+      ],
+      "peso_pendiente": 0.4,
+      "nota_necesaria": 4.25
+    },
+    {
+      "nombre": "Programación",
+      "promedio_actual": 4.3,
+      "objetivo": 4.0,
+      "evaluaciones": [
+        {
+          "nombre": "Proyecto 1",
+          "nota": 4.5,
+          "peso": 0.25
+        },
+        {
+          "nombre": "Parcial 1",
+          "nota": 4.2,
+          "peso": 0.25
+        },
+        {
+          "nombre": "Taller práctico",
+          "nota": 4.2,
+          "peso": 0.2
+        }
+      ],
+      "peso_pendiente": 0.3,
+      "nota_necesaria": 3.3
+    },
+    {
+      "nombre": "Inglés",
+      "promedio_actual": 3.25,
+      "objetivo": 3.8,
+      "evaluaciones": [
+        {
+          "nombre": "Speaking",
+          "nota": 3.0,
+          "peso": 0.2
+        },
+        {
+          "nombre": "Writing",
+          "nota": 3.4,
+          "peso": 0.2
+        },
+        {
+          "nombre": "Listening",
+          "nota": 3.3,
+          "peso": 0.2
+        }
+      ],
+      "peso_pendiente": 0.4,
+      "nota_necesaria": 4.35
+    }
+  ]
+}

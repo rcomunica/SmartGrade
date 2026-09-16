@@ -34,6 +34,7 @@ $old = $_SESSION['terms_old'] ?? null;
 unset($_SESSION['terms_old']);
 
 $name_value = $old['name'] ?? $term['name'];
+$is_active_value = $old['is_active'] ?? $term['is_active'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -80,6 +81,17 @@ $name_value = $old['name'] ?? $term['name'];
                                 maxlength="100"
                                 required
                                 value="<?= htmlspecialchars($name_value, ENT_QUOTES, 'UTF-8') ?>"
+                                class="input">
+                        </div>
+
+                        <div>
+                            <label for="is_active" class="field-label">¿Periodo activo?</label>
+                            <input
+                                type="checkbox"
+                                id="is_active"
+                                name="is_active"
+                                required
+                                <?= $is_active_value ? 'checked' : '' ?>
                                 class="input">
                         </div>
 
