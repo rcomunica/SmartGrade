@@ -43,7 +43,7 @@ $nav_base = $nav_base ?? '';
             <span class="nav-label">Periodos</span>
         </a>
 
-        <a href="<?= htmlspecialchars($nav_base, ENT_QUOTES, 'UTF-8') ?>metas.php" class="nav-item <?= $active_page === 'metas' ? 'is-active' : '' ?>">
+        <a href="<?= htmlspecialchars($nav_base, ENT_QUOTES, 'UTF-8') ?>goals/index.php" class="nav-item <?= $active_page === 'metas' ? 'is-active' : '' ?>">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10" />
                 <circle cx="12" cy="12" r="6" />
