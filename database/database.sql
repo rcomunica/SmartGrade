@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS proyecto_grado CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE IF NOT EXISTS SmartGrade CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-USE proyecto_grado;
+USE SmartGrade;
 
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,

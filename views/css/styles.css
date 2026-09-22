@@ -4,7 +4,7 @@
    ========================================================================== */
 
 :root {
-  /* --- Colores base --- */
+  /* --- Colores fondo --- */
   --color-bg: #f1f5f9;
   --color-surface: #ffffff;
   --color-surface-alt: #f8fafc;
@@ -17,7 +17,7 @@
   --color-text-dim: #94a3b8; /* slate-400 */
   --color-text-inverse: #ffffff;
 
-  /* --- Marca / acciones --- */
+  /* --- Marca / acciones botones, etc. --- */
   --color-primary: #059669; /* emerald-600, mejor contraste sobre blanco */
   --color-primary-hover: #047857; /* emerald-700 */
   --color-primary-soft: rgba(5, 150, 105, 0.1);
