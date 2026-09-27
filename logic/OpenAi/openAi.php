@@ -10,6 +10,13 @@ function formatGradesJson(PDO $pdo, array $grades)
     $term = get_actual_term($pdo);
     $avgGeneral = get_avg_grade($pdo);
 
+    if ($term !== null) {
+        $grades = array_values(array_filter(
+            $grades,
+            static fn(array $grade): bool => (int) $grade['term_id'] === (int) $term['id']
+        ));
+    }
+
     $materias = [];
     foreach ($grades as $grade) {
         $subjectId = $grade['subjet_id'];

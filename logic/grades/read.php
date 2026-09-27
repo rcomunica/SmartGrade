@@ -28,7 +28,8 @@ if (!function_exists('getUserGrades')) {
                 g.term_id,
                 g.name,
                 g.value,
-                avg(g.value) OVER (PARTITION BY g.subjet_id, g.term_id) AS avg_grade,
+                SUM(g.value * g.percentage) OVER (PARTITION BY g.subjet_id, g.term_id)
+                    / NULLIF(SUM(g.percentage) OVER (PARTITION BY g.subjet_id, g.term_id), 0) AS avg_grade,
                 g.percentage,
                 g.created_at,
                 s.name AS subjet_name,

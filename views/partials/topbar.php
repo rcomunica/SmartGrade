@@ -2,6 +2,9 @@
 // partials/topbar.php
 // Requiere $page_title definida en la página que lo incluye.
 $page_title = $page_title ?? 'Dashboard';
+$active_page = $active_page ?? '';
+$nav_base = $nav_base ?? '';
+$logout_base = $nav_base === '' ? '../' : '../../';
 $initials = '';
 if (!empty($_SESSION['user_name'])) {
     $parts = explode(' ', trim($_SESSION['user_name']));
@@ -9,7 +12,20 @@ if (!empty($_SESSION['user_name'])) {
 }
 ?>
 <header class="topbar">
-    <h1 class="font-display text-lg font-semibold text-heading"><?= htmlspecialchars($page_title, ENT_QUOTES, 'UTF-8') ?></h1>
+    <div class="topbar-brand">
+        <div class="brand-badge">S</div>
+        <span class="topbar-brand-name">SmartGrade</span>
+    </div>
+
+    <nav class="top-nav" aria-label="Navegación principal">
+        <a href="<?= htmlspecialchars($nav_base, ENT_QUOTES, 'UTF-8') ?>dashboard.php" class="top-nav-item <?= $active_page === 'inicio' ? 'is-active' : '' ?>">Inicio</a>
+        <a href="<?= htmlspecialchars($nav_base, ENT_QUOTES, 'UTF-8') ?>grades/index.php" class="top-nav-item <?= $active_page === 'notas' ? 'is-active' : '' ?>">Notas</a>
+        <a href="<?= htmlspecialchars($nav_base, ENT_QUOTES, 'UTF-8') ?>terms/index.php" class="top-nav-item <?= $active_page === 'periodos' ? 'is-active' : '' ?>">Periodos</a>
+        <a href="<?= htmlspecialchars($nav_base, ENT_QUOTES, 'UTF-8') ?>goals/index.php" class="top-nav-item <?= $active_page === 'metas' ? 'is-active' : '' ?>">Metas</a>
+        <a href="<?= htmlspecialchars($nav_base, ENT_QUOTES, 'UTF-8') ?>subjets/index.php" class="top-nav-item <?= $active_page === 'materias' ? 'is-active' : '' ?>">Materias</a>
+    </nav>
+
+    <h1 class="topbar-page-title font-display text-lg font-semibold text-heading"><?= htmlspecialchars($page_title, ENT_QUOTES, 'UTF-8') ?></h1>
 
     <div class="flex items-center gap-2 relative">
 
@@ -36,9 +52,10 @@ if (!empty($_SESSION['user_name'])) {
         <div class="w-px h-6 mx-1" style="background-color: var(--color-border);"></div>
 
         <!-- Usuario + logout -->
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3 user-menu">
+            <span class="topbar-user-name"><?= htmlspecialchars($_SESSION['user_name'] ?? '', ENT_QUOTES, 'UTF-8') ?></span>
             <div class="avatar"><?= htmlspecialchars($initials, ENT_QUOTES, 'UTF-8') ?></div>
-            <a href="../../logic/logout.php" class="icon-btn" aria-label="Cerrar sesión" title="Cerrar sesión">
+            <a href="<?= htmlspecialchars($logout_base, ENT_QUOTES, 'UTF-8') ?>logic/logout.php" class="icon-btn" aria-label="Cerrar sesión" title="Cerrar sesión">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
                     <polyline points="16 17 21 12 16 7" />

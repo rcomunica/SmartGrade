@@ -50,8 +50,6 @@ $status_labels = [
 
 <body>
     <div class="app-shell">
-        <?php include __DIR__ . '/../partials/sidebar.php'; ?>
-
         <div class="main-content">
             <?php include __DIR__ . '/../partials/topbar.php'; ?>
 

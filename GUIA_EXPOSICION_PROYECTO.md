@@ -289,7 +289,7 @@ Todas las funciones reciben una conexion PDO y, salvo el total de porcentajes, t
 2. Une `subjets` para obtener `subjet_name`.
 3. Une `terms` para obtener `term_name`.
 4. Filtra para que materia y periodo pertenezcan al mismo usuario.
-5. Calcula `avg_grade` con una funcion de ventana: promedio simple de las notas que comparten materia y periodo.
+5. Calcula `avg_grade` con una funcion de ventana: promedio ponderado por porcentaje de las notas que comparten materia y periodo.
 6. Ordena por nombre de materia ascendente y fecha de creacion descendente.
 7. Devuelve todas las filas.
 

@@ -46,8 +46,6 @@ $is_active_value = $old['is_active'] ?? $term['is_active'];
 
 <body>
     <div class="app-shell">
-        <?php include __DIR__ . '/../partials/sidebar.php'; ?>
-
         <div class="main-content">
             <?php include __DIR__ . '/../partials/topbar.php'; ?>
 

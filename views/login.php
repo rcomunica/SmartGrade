@@ -22,13 +22,12 @@ unset($_SESSION['old_email']);
     ?>
 </head>
 
-<body class="min-h-screen flex items-center justify-center px-4">
+<body class="min-h-screen flex items-center justify-center px-4 auth-shell">
 
-    <div class="w-full max-w-4xl grid md:grid-cols-2 card overflow-hidden shadow-elevated">
+    <div class="w-full max-w-4xl grid md:grid-cols-2 card overflow-hidden shadow-elevated auth-card">
 
         <!-- Panel izquierdo: contexto / marca -->
-        <div class="hidden md:flex flex-col justify-between card-panel p-10 relative overflow-hidden">
-            <div class="absolute -top-20 -right-20 w-64 h-64 rounded-full blur-3xl" style="background-color: var(--color-primary-soft);"></div>
+        <div class="hidden md:flex flex-col justify-between card-panel p-10 relative overflow-hidden auth-aside">
 
             <div class="relative z-10">
                 <div class="brand-badge">S</div>
@@ -39,14 +38,10 @@ unset($_SESSION['old_email']);
                     Accede a tu panel de control para gestionar tus calificaciones, cursos y más.
                 </p>
             </div>
-
-            <div class="relative z-10 text-xs text-dim font-mono">
-                v1.0 — SmartGrade
-            </div>
         </div>
 
         <!-- Panel derecho: formulario -->
-        <div class="p-8 sm:p-10 flex flex-col justify-center">
+        <div class="p-8 sm:p-10 flex flex-col justify-center auth-form">
             <h2 class="font-display text-2xl font-semibold text-heading">Bienvenido de nuevo</h2>
             <p class="text-muted text-sm mt-1 mb-6">Ingresa tus credenciales para continuar</p>
 

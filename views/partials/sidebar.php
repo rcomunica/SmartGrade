@@ -12,6 +12,7 @@ $nav_base = $nav_base ?? '';
     </div>
 
     <nav class="sidebar-nav">
+        <span class="nav-section-label">Espacio de trabajo</span>
         <a href="<?= htmlspecialchars($nav_base, ENT_QUOTES, 'UTF-8') ?>dashboard.php" class="nav-item <?= $active_page === 'dashboard' ? 'is-active' : '' ?>">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="3" width="7" height="9" />
@@ -59,6 +60,8 @@ $nav_base = $nav_base ?? '';
             </svg>
             <span class="nav-label">Materias</span>
         </a>
+
+        <span class="nav-section-label nav-section-label-secondary">Organización</span>
     </nav>
 
     <div class="sidebar-footer">
