@@ -25,7 +25,7 @@ $high_progress = min(100, max(0, (((float) ($high_subject['avg_grade'] ?? 0)) / 
 <html lang="es">
 
 <head>
-    <title>Dashboard | <?= htmlspecialchars($_SESSION['user_name'], ENT_QUOTES, 'UTF-8') ?></title>
+    <title>Inicio | <?= htmlspecialchars($_SESSION['user_name'], ENT_QUOTES, 'UTF-8') ?></title>
     <?php
     include __DIR__ . '/header.php';
     ?>

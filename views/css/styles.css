@@ -12,14 +12,14 @@
   --color-border-focus: var(--color-primary);
 
   /* --- Texto --- */
-  --color-text: #20241f;
+  --color-text: #020202;
   --color-text-muted: #687267;
   --color-text-dim: #9ba49a;
   --color-text-inverse: #ffffff;
 
   /* --- Marca / acciones botones, etc. --- */
-  --color-primary: #4d6b52;
-  --color-primary-hover: #38523d;
+  --color-primary: #5800e6;
+  --color-primary-hover: #5600e6;
   --color-primary-soft: #e6eee5;
 
   /* --- Estados --- */
