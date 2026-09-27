@@ -60,7 +60,7 @@ $high_progress = min(100, max(0, (((float) ($high_subject['avg_grade'] ?? 0)) / 
                                     <path d="M18.7 8 13 13.7l-4-4L3 16" />
                                 </svg>
                             </div>
-                            <span class="score-state">Escala 1 a 5</span>
+                            <span class="score-state">Escala 1.0 a 5.0</span>
                         </div>
                         <div class="score-card-body">
                             <div class="score-ring" style="--score-progress: <?= htmlspecialchars((string) $average_progress, ENT_QUOTES, 'UTF-8') ?>%;">
