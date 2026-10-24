@@ -51,7 +51,7 @@ $status_labels = [
 
             <main class="p-6 space-y-6">
                 <div>
-                    <h2 class="font-display text-xl font-semibold text-heading">Gestión de metas</h2>
+                    <h2 class="font-display text-xl font-semibold text-heading text-blue-400">Gestión de metas</h2>
                     <p class="text-muted text-sm mt-1">Define, actualiza y da seguimiento a tus objetivos académicos.</p>
                 </div>
 

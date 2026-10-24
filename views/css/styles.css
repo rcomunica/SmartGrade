@@ -5,35 +5,35 @@
 
 :root {
   /* --- Colores fondo --- */
-  --color-bg: #f7f8f6;
+  --color-bg: #f4f9fc;
   --color-surface: #ffffff;
-  --color-surface-alt: #f0f3ee;
-  --color-border: #e4e8e2;
+  --color-surface-alt: #e9f5fb;
+  --color-border: #d8e8f0;
   --color-border-focus: var(--color-primary);
 
   /* --- Texto --- */
-  --color-text: #020202;
-  --color-text-muted: #687267;
-  --color-text-dim: #9ba49a;
+  --color-text: #17345b;
+  --color-text-muted: #526b90;
+  --color-text-dim: #9aacc8;
   --color-text-inverse: #ffffff;
 
   /* --- Marca / acciones botones, etc. --- */
-  --color-primary: #5800e6;
-  --color-primary-hover: #5600e6;
-  --color-primary-soft: #e6eee5;
+  --color-primary: #0878c9;
+  --color-primary-hover: #0565ae;
+  --color-primary-soft: #e4f2fb;
 
   /* --- Estados --- */
-  --color-danger: #b45e52;
-  --color-danger-border: #efd8d2;
-  --color-danger-bg: #fbefec;
+  --color-danger: #b44e57;
+  --color-danger-border: #f0d5d8;
+  --color-danger-bg: #fff0f1;
 
-  --color-success: #4d7b5b;
-  --color-success-border: #d5e7d8;
-  --color-success-bg: #edf7ef;
+  --color-success: #269b62;
+  --color-success-border: #cfe9dc;
+  --color-success-bg: #edf9f2;
 
   /* --- Superficies interactivas (hover states, inputs) --- */
-  --color-overlay-soft: #f5f7f4;
-  --color-overlay-medium: #edf1eb;
+  --color-overlay-soft: #fbfdff;
+  --color-overlay-medium: #eaf4fa;
 
   /* --- Tipografía --- */
   --font-body: "DM Sans", sans-serif;
@@ -156,13 +156,13 @@ body {
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
+  background: linear-gradient(105deg, #48bd35 0%, #0995a5 50%, #0878c9 100%);
   color: var(--color-text-inverse);
   width: 100%;
 }
 
 .btn-primary:hover {
-  background-color: var(--color-primary-hover);
+  background: linear-gradient(105deg, #3eab2e 0%, #078592 50%, #0565ae 100%);
 }
 
 .btn:disabled {
@@ -265,7 +265,7 @@ body {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: var(--radius-lg);
-  background-color: var(--color-text);
+  background: linear-gradient(145deg, #0878c9, #49ba38);
   color: var(--color-text-inverse);
   display: flex;
   align-items: center;
@@ -700,7 +700,7 @@ body {
   width: 2.35rem;
   height: 2.35rem;
   border-radius: 50%;
-  background: #dfe9dc;
+  background: var(--color-primary-soft);
   color: var(--color-primary-hover);
 }
 
@@ -722,7 +722,7 @@ body {
 
 .input:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(77, 107, 82, 0.12);
+  box-shadow: 0 0 0 3px rgba(8, 120, 201, 0.12);
 }
 
 .btn {
@@ -732,11 +732,11 @@ body {
 }
 
 .btn-primary {
-  background: var(--color-text);
+  background: linear-gradient(105deg, #48bd35 0%, #0995a5 50%, #0878c9 100%);
 }
 
 .btn-primary:hover {
-  background: var(--color-primary-hover);
+  background: linear-gradient(105deg, #3eab2e 0%, #078592 50%, #0565ae 100%);
 }
 
 main.p-6 {
@@ -845,7 +845,7 @@ main.p-6 table tbody tr:hover {
 
 .widget-card:first-child .widget-icon {
   background: rgba(255, 255, 255, 0.12);
-  color: #dfe9dc;
+  color: #a8e68d;
 }
 
 .badge-pill {
@@ -948,38 +948,139 @@ details.card > summary::-webkit-details-marker {
 
 body.auth-shell {
   background:
-    linear-gradient(135deg, rgba(230, 238, 229, 0.8), transparent 42%),
-    var(--color-bg);
+    linear-gradient(135deg, rgba(225, 247, 252, 0.9), transparent 42%),
+    #edf7fc;
 }
 
 .auth-card {
+  max-width: 76rem;
+  min-height: 46rem;
   border-radius: 1.35rem;
-  border-color: var(--color-border);
-  box-shadow: 0 18px 55px rgba(42, 52, 42, 0.08);
+  border-color: #cfe5f0;
+  box-shadow: 0 18px 55px rgba(21, 83, 123, 0.12);
 }
 
 .auth-aside {
-  min-height: 31rem;
-  background: var(--color-text);
+  min-height: 46rem;
+  isolation: isolate;
+  background:
+    linear-gradient(158deg, transparent 0 14%, rgba(255, 255, 255, 0.96) 14.2% 18%, transparent 18.3%),
+    linear-gradient(17deg, #0878c9 0%, #0878c9 30%, #45b83b 58%, #0a9c9e 100%);
   color: white;
 }
 
 .auth-aside .brand-badge {
-  background: #dfe9dc;
-  color: var(--color-text);
+  width: 3.25rem;
+  height: 3.25rem;
+  border: 3px solid #e8f7ff;
+  border-radius: 1rem;
+  background: #ffffff;
+  color: #526b90;
+  box-shadow: 0 0 0 2px #38b6c8, 0 0 0 4px #63b936;
+  font-size: 1.35rem;
 }
 
 .auth-aside h1 {
-  color: white;
+  color: #0878c9;
+  font-size: clamp(2.6rem, 4vw, 3.6rem);
   letter-spacing: -0.06em;
 }
 
 .auth-aside p {
-  color: #aab7aa;
+  color: #526b90;
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+
+.aside-wave {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.aside-wave-top {
+  top: 0;
+  left: 0;
+  height: 42%;
+}
+
+.aside-wave-bottom {
+  right: 0;
+  bottom: 0;
+  height: 43%;
+}
+
+.auth-register .auth-aside {
+  background: #f5fbff;
+}
+
+.auth-register .auth-aside .t-blue {
+  color: #0878c9;
+}
+
+.auth-register .auth-aside .t-green {
+  color: #34a846;
+}
+
+.auth-register .auth-aside .aside-text {
+  max-width: 26rem;
+  margin-top: 0.75rem;
+  color: #526b90;
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+
+.auth-shell:not(.auth-register) .auth-aside h1 {
+  color: #ffffff;
+}
+
+.auth-shell:not(.auth-register) .auth-aside p {
+  color: #d8edf8;
 }
 
 .auth-form {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.96);
+  padding: 3.5rem 3.15rem;
+}
+
+.auth-form h2 {
+  color: #0878c9;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  letter-spacing: -0.06em;
+}
+
+.auth-form .field-label {
+  color: #29466f;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.auth-form .input {
+  min-height: 3.55rem;
+  border: 2px solid transparent;
+  border-radius: 0.8rem;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(105deg, #28a8e8, #56c65a) border-box;
+  font-size: 1rem;
+  padding-inline: 1.25rem;
+}
+
+.auth-form .input:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(8, 120, 201, 0.16);
+}
+
+.auth-form .btn-primary {
+  min-height: 3.4rem;
+  font-size: 1.05rem;
+  border-radius: 0.8rem;
+}
+
+.brand-green {
+  color: #34a846;
 }
 
 @media (max-width: 767px) {
@@ -993,6 +1094,14 @@ body.auth-shell {
 
   .auth-form {
     padding: 1.5rem;
+  }
+
+  .auth-card {
+    min-height: auto;
+  }
+
+  .auth-form h2 {
+    font-size: 2rem;
   }
 }
 
