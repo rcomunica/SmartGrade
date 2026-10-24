@@ -948,8 +948,7 @@ details.card > summary::-webkit-details-marker {
 
 body.auth-shell {
   background:
-    linear-gradient(135deg, rgba(225, 247, 252, 0.9), transparent 42%),
-    #edf7fc;
+    linear-gradient(135deg, rgba(225, 247, 252, 0.9), transparent 42%), #edf7fc;
 }
 
 .auth-card {
@@ -964,7 +963,7 @@ body.auth-shell {
   min-height: 46rem;
   isolation: isolate;
   background:
-    linear-gradient(158deg, transparent 0 14%, rgba(255, 255, 255, 0.96) 14.2% 18%, transparent 18.3%),
+    linear-gradient(158deg, transparent 0 14%, transparent 18.3%),
     linear-gradient(17deg, #0878c9 0%, #0878c9 30%, #45b83b 58%, #0a9c9e 100%);
   color: white;
 }
@@ -976,7 +975,9 @@ body.auth-shell {
   border-radius: 1rem;
   background: #ffffff;
   color: #526b90;
-  box-shadow: 0 0 0 2px #38b6c8, 0 0 0 4px #63b936;
+  box-shadow:
+    0 0 0 2px #38b6c8,
+    0 0 0 4px #63b936;
   font-size: 1.35rem;
 }
 

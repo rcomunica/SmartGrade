@@ -36,41 +36,40 @@ function old($field, $old)
             <svg class="aside-wave aside-wave-top" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
                 <defs>
                     <linearGradient id="gTop" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0" stop-color="#0a8f86"/>
-                        <stop offset="1" stop-color="#5cbf44"/>
+                        <stop offset="0" stop-color="#0a8f86" />
+                        <stop offset="1" stop-color="#5cbf44" />
                     </linearGradient>
                 </defs>
-                <path d="M0,0 H340 C220,50 100,85 0,128 Z" fill="url(#gTop)"/>
-                <path d="M340,0 H400 V12 C330,16 250,40 190,66 C250,30 300,10 340,0 Z" fill="#4db8ff"/>
-                <path d="M0,138 C100,92 220,55 345,8" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+                <path d="M0,0 H340 C220,50 100,85 0,128 Z" fill="url(#gTop)" />
+                <path d="M340,0 H400 V12 C330,16 250,40 190,66 C250,30 300,10 340,0 Z" fill="#4db8ff" />
+                <path d="M0,138 C100,92 220,55 345,8" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" />
             </svg>
 
             <!-- Ola inferior -->
             <svg class="aside-wave aside-wave-bottom" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
                 <defs>
                     <linearGradient id="gBlue" x1="0" y1="1" x2="1" y2="0">
-                        <stop offset="0" stop-color="#0a4fa8"/>
-                        <stop offset=".55" stop-color="#1a9bd8"/>
-                        <stop offset="1" stop-color="#6cc96a"/>
+                        <stop offset="0" stop-color="#0a4fa8" />
+                        <stop offset=".55" stop-color="#1a9bd8" />
+                        <stop offset="1" stop-color="#6cc96a" />
                     </linearGradient>
                     <linearGradient id="gGreen" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0" stop-color="#3fae3f"/>
-                        <stop offset="1" stop-color="#1f9a6a"/>
+                        <stop offset="0" stop-color="#3fae3f" />
+                        <stop offset="1" stop-color="#1f9a6a" />
                     </linearGradient>
                 </defs>
-                <path d="M0,18 C100,92 250,158 400,160 C250,148 100,100 0,52 Z" fill="url(#gGreen)"/>
-                <path d="M0,70 C100,125 250,178 400,166 V200 H0 Z" fill="url(#gBlue)"/>
-                <path d="M0,60 C100,115 250,170 400,160" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+                <path d="M0,18 C100,92 250,158 400,160 C250,148 100,100 0,52 Z" fill="url(#gGreen)" />
+                <path d="M0,70 C100,125 250,178 400,166 V200 H0 Z" fill="url(#gBlue)" />
+                <path d="M0,60 C100,115 250,170 400,160" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" />
             </svg>
 
             <div class="relative z-10">
-                <div class="brand-badge">S</div>
                 <h1 class="font-display font-bold leading-tight">
                     <span class="t-blue">Crea tu</span><br>
                     <span class="t-green">cuenta</span>
                 </h1>
                 <p class="aside-text">
-                    Regístrate para acceder al sistema del proyecto de grado.
+                    Regístrate para acceder al sistema.
                 </p>
             </div>
         </div>

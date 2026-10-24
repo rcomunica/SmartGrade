@@ -30,7 +30,6 @@ unset($_SESSION['old_email']);
         <div class="hidden md:flex flex-col justify-between card-panel p-10 relative overflow-hidden auth-aside">
 
             <div class="relative z-10">
-                <div class="brand-badge">S</div>
                 <h1 class="font-display text-3xl font-bold mt-8 text-heading leading-tight">
                     SmartGrade<br>Gestión académica
                 </h1>
